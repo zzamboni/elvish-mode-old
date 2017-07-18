@@ -7,9 +7,11 @@ Basic highlighting and indentation works, but many things could be broken - plea
 Installation is for now manual. To use is, put this file in
 ~/.emacs.d/lisp, and add the following to your .emacs file:
 
-    (add-to-list 'load-path "~/.emacs.d/lisp")
-    (require 'elvish-mode)
-    (add-to-list 'auto-mode-alist '("\\.elv\\'" . elvish-mode))
+```elisp
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'elvish-mode)
+(add-to-list 'auto-mode-alist '("\\.elv\\'" . elvish-mode))
+```
 
 This mode is based on `javascript-mode`, which seems to get most of
 the indentation right, but makes mistakes sometimes. Still
