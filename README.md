@@ -7,7 +7,7 @@ Basic highlighting and indentation works, but many things could be broken - plea
 Installation is for now manual. To use it:
 
 - Install go-mode, since this mode is based on it (https://github.com/dominikh/go-mode.el or use `package-install` in Emacs)
-- Put this file in `~/.emacs.d/lisp`, and add the following to your .emacs file:
+- Put [`elvish-mode.el`](elvish-mode.el) in `~/.emacs.d/lisp`, and add the following to your .emacs file:
 
   ```elisp
   (add-to-list 'load-path "~/.emacs.d/lisp")
