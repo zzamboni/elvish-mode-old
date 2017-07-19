@@ -34,6 +34,8 @@
 ;;; Code:
 
 ;; define several category of keywords
+
+;; Taken from https://github.com/elves/elvish/blob/master/eval/builtin_special.go
 (setq elvish-keywords '(
                         "del"
                         "fn"
@@ -45,7 +47,8 @@
                         "for"
                         "try"
                         ) )
-(setq elvish-types '())
+
+;; Taken from https://github.com/elves/elvish/blob/master/eval/builtin_namespace.go
 (setq elvish-constants '(
                          "$_"
                          "$pid"
@@ -55,7 +58,8 @@
                          "$paths"
                          "$pwd"
                          ))
-(setq elvish-events '())
+
+;; Taken from https://github.com/elves/elvish/blob/master/eval/builtin_fn.go
 (setq elvish-functions '(
                          ;; Trivial builtin
                          "nop"
@@ -208,9 +212,7 @@
 
 ;; generate regex string for each category of keywords
 (setq elvish-keywords-regexp (regexp-opt elvish-keywords 'words))
-(setq elvish-type-regexp (regexp-opt elvish-types 'words))
 (setq elvish-constant-regexp (regexp-opt elvish-constants 'words))
-(setq elvish-event-regexp (regexp-opt elvish-events 'words))
 (setq elvish-functions-regexp (regexp-opt elvish-functions 'words))
 
 ;; create the list for font-lock.
@@ -268,16 +270,12 @@
 
 ;; clear memory. no longer needed
 (setq elvish-keywords nil)
-(setq elvish-types nil)
 (setq elvish-constants nil)
-(setq elvish-events nil)
 (setq elvish-functions nil)
 
 ;; clear memory. no longer needed
 (setq elvish-keywords-regexp nil)
-(setq elvish-types-regexp nil)
 (setq elvish-constants-regexp nil)
-(setq elvish-events-regexp nil)
 (setq elvish-functions-regexp nil)
 
 ;; add the mode to the `features' list
