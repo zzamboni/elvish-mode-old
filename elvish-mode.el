@@ -1,10 +1,7 @@
 ;;; elvish-mode.el --- sample major mode for editing Elvish.
-;; -*- coding: utf-8; lexical-binding: t; -*-
-
-;; Copyright © 2017, Diego Zamboni
 
 ;; Author: Diego Zamboni <diego@zzamboni.org>
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Created: 18-Jul-17
 ;; Keywords: languages
 ;; Homepage: https://github.com/zzamboni/elvish-mode
@@ -13,7 +10,11 @@
 
 ;;; License:
 
-;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 2.
+;; You can redistribute this program and/or modify it under the terms of the MIT Open Source license (https://opensource.org/licenses/MIT)
+
+;;; ChangeLog:
+
+;; - 2017-07-19: modified to base on go-mode instead of javascript-mode, which improves indentation.
 
 ;;; Commentary:
 
@@ -21,11 +22,14 @@
 
 ;; VERY EARLY VERSION
 ;; Basic highlighting and indentation works, but many things could be broken.
-;; To use, put this file in ~/.emacs.d/lisp, and add the following to your .emacs file:
+;; To use:
 ;;
-;; (add-to-list 'load-path "~/.emacs.d/lisp")
-;; (require 'elvish-mode)
-;; (add-to-list 'auto-mode-alist '("\\.elv\\'" . elvish-mode))
+;; - Install go-mode, since this mode is based on it (https://github.com/dominikh/go-mode.el or use package-install in Emacs)
+;; - Put this file in ~/.emacs.d/lisp, and add the following to your .emacs file:
+;;
+;;       (add-to-list 'load-path "~/.emacs.d/lisp")
+;;       (require 'elvish-mode)
+;;       (add-to-list 'auto-mode-alist '("\\.elv\\'" . elvish-mode))
 
 ;;; Code:
 
@@ -251,7 +255,7 @@
     (indent-line-to indent-col)))
 
 ;;;###autoload
-(define-derived-mode elvish-mode javascript-mode "elvish mode"
+(define-derived-mode elvish-mode go-mode "Elvish"
   "Major mode for editing Elvish shell code (http://elvish.io)"
 
   ;; code for syntax highlighting
