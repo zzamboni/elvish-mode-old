@@ -1,6 +1,8 @@
 # elvish-mode for Emacs
 
-Very early work in progress of a major mode for editing Elvish code in Emacs.
+**This was an initial attempt at a major mode for editing Elvish code in Emacs, but it has been superseded by https://github.com/ALSchwalm/elvish-mode - please use that instead.**
+
+----
 
 Basic highlighting and indentation works, but many things could be broken - please let me know!
 
